@@ -1,6 +1,7 @@
 ---
 driver:
-  name: vagrant
+  name: docker
+  use_sudo: false
 
 driver_config:
   network:
@@ -9,6 +10,8 @@ driver_config:
 
 provisioner:
   name: chef_zero
+  client_rb:
+    audit_mode: :enabled
 
 platforms:
   - name: ubuntu-14.04
@@ -17,4 +20,5 @@ suites:
   - name: default
     run_list:
       - recipe[sitedbaas::default]
+      - recipe[audit-demo::ubuntu-audit-apache]
     attributes:

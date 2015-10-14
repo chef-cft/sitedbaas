@@ -24,6 +24,8 @@ end
 
 template '/var/www/html/index.html' do
   source 'index.html.erb'
+  owner 'www-data'
+  group 'www-data'
 end
 
 execute 'extract web files' do
@@ -32,3 +34,4 @@ execute 'extract web files' do
     ::File.exist?('/var/www/favicon.ico')
   end
 end
+

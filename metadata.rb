@@ -4,6 +4,6 @@ maintainer_email 'b@chef.io'
 license 'all_rights'
 description 'Installs/Configures sitedbaas'
 long_description 'Installs/Configures sitedbaas'
-version '0.1.1'
+version '0.1.5'
 
 depends 'httpdbaas'
