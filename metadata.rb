@@ -7,4 +7,3 @@ long_description 'Installs/Configures sitedbaas'
 version '0.1.5'
 
 depends 'httpdbaas'
-depends 'audit-demo'
