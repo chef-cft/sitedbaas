@@ -4,6 +4,15 @@
     "name": "build-cookbook",
     "path": ".delivery/build-cookbook"
   },
-  "skip_phases": [],
+  "delivery-truck": {
+    "publish": {
+      "chef_server": true
+    }
+  },
+  "skip_phases": [
+  "quality",
+  "security",
+  "smoke"
+  ],
   "build_nodes": {}
 }
