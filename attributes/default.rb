@@ -1,2 +1,2 @@
-default['sitedbaas']['company-name'] = 'Chef Friends'
-default['sitedbaas']['project-name'] = 'I am flavor text. Pay me no mind.'
+default['sitedbaas']['company-name'] = 'Marriott'
+default['sitedbaas']['project-name'] = 'This is some text'
