@@ -24,8 +24,6 @@ end
 
 template '/var/www/html/index.html' do
   source 'index.html.erb'
-  group 'www-data'
-  user 'www-data'
 end
 
 execute 'extract web files' do
