@@ -8,12 +8,12 @@ platforms:
   - name: ec2-ubuntu-14.04
     driver:
       image_id: ami-4c7a3924
-      transport.username: ubuntu
+      
       name: ec2
       # aws_access_key_id: <%= ENV['AWS_ACCESS_KEY_ID'] %>
       # aws_secret_access_key: <%= ENV['AWS_SECRET_ACCESS_KEY'] %>
       aws_ssh_key_id: cad_demo_east
-      transport.ssh_key: ~/.ssh/cad_demo_east.pem
+      
       #security_group_ids: ["sg-a78bf6c0", "sg-a58bf6c2" ]
       region: us-east-1
       availability_zone: us-east-1c
@@ -23,7 +23,10 @@ platforms:
       tags: {
         Name: "cad-kitchen"
       }
-        
+    transport:
+      username: ubuntu
+      ssh_key: ~/.ssh/cad_demo_east.pem
+         
 
 suites:
   - name: default
