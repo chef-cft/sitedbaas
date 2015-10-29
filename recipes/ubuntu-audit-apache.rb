@@ -4,7 +4,6 @@
 #
 # Copyright (c) 2015 Ricardo Lupo, All Rights Reserved.
 
-​
 control_group 'Validate apache configuration' do
   control 'Ensure directory listing is not allowed' do
     it 'does not allow directory listing' do
