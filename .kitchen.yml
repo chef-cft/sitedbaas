@@ -22,6 +22,7 @@ platforms:
       instance_type: m1.small
       tags: {
         Name: "cad-kitchen"
+        Created-By: "test-kitchen"
       }
     transport:
       username: ubuntu
