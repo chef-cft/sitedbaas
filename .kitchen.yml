@@ -21,8 +21,8 @@ platforms:
       #subnet_id: subnet-28119003
       instance_type: m1.small
       tags: {
-        Name: "cad-kitchen"
-        Created-By: "test-kitchen"
+        Name: "cad-kitchen",
+        created-by: "test-kitchen"
       }
     transport:
       username: ubuntu
