@@ -8,11 +8,16 @@
 
 include_recipe 'httpdbaas::install_apache'
 
-template '/etc/apache2/httpd.conf' do
+service 'apache2' do
+  action [:start, :enable]
+end
+
+template '/etc/apache2/apache2.conf' do
   source 'sitedbaas.erb'
   owner 'root'
   group 'root'
   mode '0644'
+  notifies :reload, 'service[apache2]'
 end
 
 tarball = "#{Chef::Config[:file_cache_path]}/webfiles.tar.gz"
