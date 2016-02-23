@@ -39,5 +39,5 @@ execute 'extract web files' do
 end
 
 service 'apache2' do
-  action [:start, :enable]
+  action [:enable, :start]
 end
