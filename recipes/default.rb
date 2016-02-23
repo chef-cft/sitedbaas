@@ -39,5 +39,6 @@ execute 'extract web files' do
 end
 
 service 'apache2' do
+  supports :reload => :true
   action [:enable, :start]
 end
