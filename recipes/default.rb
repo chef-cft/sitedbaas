@@ -8,10 +8,6 @@
 
 include_recipe 'httpdbaas::install_apache'
 
-service 'apache2' do
-  action [:start, :enable]
-end
-
 template '/etc/apache2/apache2.conf' do
   source 'sitedbaas.erb'
   owner 'root'
@@ -40,4 +36,8 @@ execute 'extract web files' do
   not_if do
     ::File.exist?('/var/www/favicon.ico')
   end
+end
+
+service 'apache2' do
+  action [:start, :enable]
 end
