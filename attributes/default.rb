@@ -1,2 +1,2 @@
-default['sitedbaas']['company-name'] = 'Chef Software, Inc.'
+default['sitedbaas']['company-name'] = 'Linux, Inc.'
 default['sitedbaas']['project-name'] = 'Chef Demo'
