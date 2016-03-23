@@ -6,7 +6,8 @@
   },
   "delivery-truck": {
     "publish": {
-      "chef_server": true
+      "chef_server": true,
+      "supermarket": "https://cad-supermarket"
     }
   },
   "skip_phases": [
