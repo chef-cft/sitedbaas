@@ -1,9 +1,8 @@
 name 'sitedbaas'
-maintainer 'The Aristocrats'
-maintainer_email 'b@chef.io'
+maintainer 'chef'
+maintainer_email 'solutions-architects@chef.io'
 license 'all_rights'
 description 'Installs/Configures sitedbaas'
 long_description 'Installs/Configures sitedbaas'
-version '0.1.39'
-
+version '0.1.40'
 depends 'httpdbaas'
