@@ -4,8 +4,6 @@
 #
 # Copyright (c) 2015 The Authors, All Rights Reserved.
 
-# She's just a small town girl, living in a lonely world!
-
 include_recipe 'httpdbaas::install_apache'
 
 template '/etc/apache2/apache2.conf' do
