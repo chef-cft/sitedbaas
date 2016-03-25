@@ -15,5 +15,6 @@
   "security",
   "smoke"
   ],
+  "dependencies": ["httpdbaas"],
   "build_nodes": {}
 }
