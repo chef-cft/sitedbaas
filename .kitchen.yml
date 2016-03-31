@@ -7,28 +7,22 @@ provisioner:
 platforms:
   - name: ec2-ubuntu-14.04
     driver:
-      image_id: ami-f95ef58a
-      
+      image_id: ami-be5cf7cd
       name: ec2
-      # aws_access_key_id: <%= ENV['AWS_ACCESS_KEY_ID'] %>
-      # aws_secret_access_key: <%= ENV['AWS_SECRET_ACCESS_KEY'] %>
       aws_ssh_key_id: emea-sa-shared
-      
-      #security_group_ids: ["sg-a78bf6c0", "sg-a58bf6c2" ]
       region: eu-west-1
-      availability_zone: eu-west-1b
+      availability_zone: b
       require_chef_omnibus: true
-      #subnet_id: subnet-28119003
       instance_type: m1.small
+      security_group_ids: ["sg-8436d7e3"]
       tags: {
         Name: "cad-kitchen",
         created-by: "test-kitchen"
       }
     transport:
       username: ubuntu
-      ssh_key: ~/.ssh/emea-sa-shared
+      ssh_key: ~/.ssh/emea-sa-shared.pem
          
-
 suites:
   - name: default
     run_list:
