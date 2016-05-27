@@ -6,12 +6,12 @@
 
 include_recipe 'httpdbaas::install_apache'
 
-template '/etc/apache2/apache2.conf' do
+template '/etc/httpd/conf/httpd.conf' do
   source 'sitedbaas.erb'
   owner 'root'
   group 'root'
   mode '0644'
-  notifies :reload, 'service[apache2]'
+  notifies :reload, 'service[httpd]'
 end
 
 tarball = "#{Chef::Config[:file_cache_path]}/webfiles.tar.gz"
@@ -20,13 +20,13 @@ remote_file tarball do
   owner 'root'
   group 'root'
   mode '0644'
-  source 'https://s3.amazonaws.com/binamov-delivery/webfiles.tar.gz'
+  source 'https://s3-eu-west-1.amazonaws.com/emea-techcft/webfiles.tar.gz'
 end
 
 template '/var/www/html/index.html' do
   source 'index.html.erb'
-  owner 'www-data'
-  group 'www-data'
+  owner 'apache'
+  group 'apache'
 end
 
 execute 'extract web files' do
@@ -36,7 +36,7 @@ execute 'extract web files' do
   end
 end
 
-service 'apache2' do
+service 'httpd' do
   supports :reload => :true
   action [:enable, :start]
 end
