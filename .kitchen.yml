@@ -5,27 +5,27 @@ provisioner:
     audit_mode: :enabled
 
 platforms:
-  - name: ec2-ubuntu-14.04
+  - name: rhel-7
     driver:
-      image_id: ami-be5cf7cd
+      image_id: ami-8b8c57f8
       name: ec2
       aws_ssh_key_id: emea-sa-shared
       region: eu-west-1
       availability_zone: b
       require_chef_omnibus: true
-      instance_type: m1.small
+      instance_type: t2.micro
       security_group_ids: ["sg-8436d7e3"]
       tags: {
         Name: "cad-kitchen",
         created-by: "test-kitchen"
       }
     transport:
-      username: ubuntu
+      username: ec2-user
       ssh_key: ~/.ssh/emea-sa-shared.pem
          
 suites:
   - name: default
     run_list:
       - recipe[sitedbaas::default]
-      - recipe[sitedbaas::ubuntu-audit-apache]
+      - recipe[sitedbaas::audit-apache]
     attributes:
